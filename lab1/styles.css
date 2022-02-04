@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.main-row {
+    height: 100vh;
+    background-image: url("https://oborot.ru/wp-content/uploads/2021/07/blogs-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-row__nav {
+
+}
+
+.main-row__title {
+    position: absolute;
+    right: 100px;
+    bottom: 20px;
+    background-color: rgba(7%, 7%, 7%, 0.5);
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.main-row__caption {
+    position: absolute;
+    right: 50px;
+    bottom: 80px;
+    background-color: rgba(7%, 7%, 7%, 0.5);
+    color: #fff;
+    padding: 18px;
+    font-size: 18px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.info {
+    padding: 5% 15%;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.info-row__col {
+    padding: 5%;
+}
+
+.info-row__img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(35 41 50, 0.3);
+    position: relative;
+    overflow: hidden;
+}
