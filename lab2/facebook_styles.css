@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+    background-color: #f0f2f5;
+
+}
+
+.left-title{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 550px;
+    
+    
+}
+
+.title{
+    font-size: 60px;
+    margin-bottom: 5px;
+    color: #1877f2;
+}
+
+.subtitle{
+    font-size: 30px;
+    
+}
+
+.main{
+    position: absolute;
+    background-color: #ffff;
+    width: 420px;
+    height: 420px;
+    left: 55%;
+    top: 20%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 9px rgb(184, 184, 184),
+                -1px -1px 5px rgb(184, 184, 184);
+}
+
+.input{
+    margin: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    width: 85%;
+    background-color: #ffff;
+    outline: none;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+    font-size: 15px; 
+}
+
+.input:focus{
+    border: 1px solid #1877f2;
+    box-shadow: 1px 1px 1px #1877f2,
+                -1px -1px 1px #1877f2;
+}
+
+.login-btn{
+   
+    margin: 10px ;
+    padding: 15px;
+    width: 95%;
+    border-radius: 5px;
+    background-color: #1877f2;
+    color: #ffff;
+    font-size: 20px;
+    border: none;
+    font-weight: bolder;
+
+}
+
+.forgot-pass{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+    border-bottom: 1px solid rgb(184, 184, 184) ;
+    margin: 20px;
+    background: none;
+}
+
+.forgot-pass a{
+    background: none;
+    text-decoration: none;
+    color: #1877f2;
+}
+
+.new-account{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 95px;
+    width: 50%;
+    
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #42b72a;
+    border-radius: 5px;
+}
+
+.new-account a{
+    text-decoration: none;
+    background: none;
+    color: #ffff;
+    font-weight: bolder;
+    font-size: 17px;
+    
+}

@@ -1,0 +1,129 @@
+body {
+    background-color: #fafafa;
+    font-family: "Open Sans";
+    box-sizing: border-box;
+  }
+  /* чтобы ссылки не подчеркивать  */
+  a {
+    text-decoration: none; 
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto; /* отступы сверху снизу 0 справа слева авто*/
+    display: flex;
+    justify-content: center; /* горизональное выравнивание */
+    align-items: center; /* вертикальное выравнивание */
+    margin-top: 48px; /* внешние отступы */
+    font-size: 14px;
+  }
+  
+  .box {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffff;
+    border: 1px solid #e6e6e6;
+    padding: 10px 0; /* внутренние отступы */
+  }
+  
+  .heading {
+    margin: 22px auto 12px;
+    background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
+    background-position: -98px 0;
+    height: 51px;
+    width: 177px;
+    overflow: hidden; /* не видно картинку  */
+  }
+  
+  input {
+    padding: 9px 0px 7px 9px;
+    font-size: 12px;
+    width: 16rem;
+    height: 1.2rem;
+    margin-bottom: 15px;
+    outline: none;
+    background: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+  }
+  
+  
+  .store {
+    display: flex;
+    justify-content: center;
+  }
+  .store-text {
+    text-align: center;
+  }
+
+  .store img {
+    height: 50px;
+    width: 140px;
+  }
+
+  .store img:first-child {
+    margin-right: 15px;
+  }
+
+  .login-form {
+    margin: 40px;
+
+  }
+  
+  .login-button {
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    background-color: #3897f0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+    margin-top: 6px;
+  }
+  
+  .separator .line {
+    height: 1px;
+    width: 40%;
+    background-color: #dbdbdb;
+  }
+  
+  .login-facebook {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fb-login-btn {
+    margin: 1rem;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #385185;
+    font-weight: 600;
+    background: transparent;
+  }
+  
+  
+  .forgot-password {
+    font-size: 15px;
+    color: #003569;
+  }
+  
+  .signup {
+    color: #3897f0;
+    font-weight: 600;
+  }
