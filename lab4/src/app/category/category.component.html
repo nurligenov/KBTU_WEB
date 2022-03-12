@@ -1,0 +1,18 @@
+<h2>Categories</h2>
+
+<div *ngFor="let category of categories">
+
+  
+    <h3>{{ category.name }}</h3>
+   
+
+  <p *ngIf="category.description">
+    Description: {{ category.description }}
+  </p>
+
+
+  <button type="button" (click)="show(category.id)">
+    show items
+  </button>
+
+</div>
