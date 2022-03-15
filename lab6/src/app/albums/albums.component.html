@@ -1,0 +1,23 @@
+<h2>Albums</h2>
+<div>
+    <form (ngSubmit)="create()">
+    <input name='id' [(ngModel)]="newAlbum.id" placeholder="id">
+    <input name='userId' [(ngModel)]="newAlbum.userId" placeholder="userId">
+    <input name='title' [(ngModel)]="newAlbum.title" placeholder="title">
+    <button type="sumbit">Create</button>
+</form>
+
+</div>
+
+
+<div *ngFor="let album of albums">
+  
+  <a [routerLink]="'/albums/' + album.id">Album {{album.id}}</a>
+  <p>Title {{album.title}}</p>
+    
+  <button type="button" (click)="remove(album.id)">
+    Remove
+  </button>
+  <br>
+  <br>
+</div>

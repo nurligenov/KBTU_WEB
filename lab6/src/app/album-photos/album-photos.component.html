@@ -1,0 +1,14 @@
+<h2>Photos</h2>
+<button type="button" (click)="return()">
+    Return Back
+</button>
+<div *ngFor="let photo of photos">
+  
+  <p>Title {{photo.title}}</p>
+  <br>
+  <img src={{photo.url}} alt="photo">
+  <br>
+  <img src={{photo.thumbnailUrl}} alt="photo">
+  <br>
+  <br>
+</div>

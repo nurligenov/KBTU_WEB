@@ -1,0 +1,13 @@
+<h2>Album Detail</h2>
+
+<div *ngFor="let album of albums">
+  
+  <p>Title {{album.title}}</p>
+  <a [routerLink]="'/albums/' + album.id + '/photos'">Photos</a>
+  <br>
+  <button type="button" (click)="return()">
+    Return Back
+  </button>
+  <br>
+  <br>
+</div>
