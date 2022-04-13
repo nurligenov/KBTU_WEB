@@ -1,8 +1,8 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Category, Product
+from .models import Category, Product, Company, Vacancy
 from django.http import JsonResponse
-from .serializers import ProductSerializer, CategorySerializer
+from .serializers import ProductSerializer, CategorySerializer, CompanySerializer, VacancySerializer
 
 
 class ProductListView(ListView):
@@ -59,4 +59,60 @@ class CategoryDetailView(DetailView):
         if not category:
             return JsonResponse({}, safe=False)
         serializer = CategorySerializer(category, many=False)
+        return JsonResponse(serializer.data, safe=False)
+
+
+class CompanyListView(ListView):
+    model = Company
+
+    def get_queryset(self):
+        return Company.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        serializer = CompanySerializer(self.get_queryset(), many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+
+class CompanyDetailView(DetailView):
+    model = Company
+
+    def get_object(self):
+        return self.model.objects.filter(pk=self.kwargs['company_id']).first()
+
+    def get(self, request, *args, **kwargs):
+        company = self.get_object()
+        if not company:
+            return JsonResponse({}, safe=False)
+        serializer = CompanySerializer(company, many=False)
+        return JsonResponse(serializer.data, safe=False)
+
+
+class VacancyListView(ListView):
+    model = Vacancy
+    slug = None
+
+    def get_queryset(self):
+        company_id = self.kwargs.get('company_id')
+        if company_id:
+            return Vacancy.objects.filter(company_id=company_id)
+        if self.slug == 'top_ten':
+            return Vacancy.objects.all().order_by('-salary')[:10]
+        return Vacancy.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        serializer = VacancySerializer(self.get_queryset(), many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+
+class VacancyDetailView(DetailView):
+    model = Vacancy
+
+    def get_object(self):
+        return self.model.objects.filter(pk=self.kwargs['vacancy_id']).first()
+
+    def get(self, request, *args, **kwargs):
+        vacancy = self.get_object()
+        if not vacancy:
+            return JsonResponse({}, safe=False)
+        serializer = VacancySerializer(vacancy, many=False)
         return JsonResponse(serializer.data, safe=False)
