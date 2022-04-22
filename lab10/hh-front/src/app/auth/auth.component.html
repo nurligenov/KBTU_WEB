@@ -2,13 +2,13 @@
     <input #Login/>
 <input #email/>
 <input #password/>
-<button onclick="register(Login.value, email.value, password.value)">Register</button>
+<button (click)="register(Login.value, email.value, password.value)">Register</button>
 </div>
 
 <div>
     <input #Login/>
     <input #email/>
     <input #password/>
-    <button onclick="login(Login.value, email.value, password.value)">Login</button>
+    <button (click)="login(Login.value, email.value, password.value)">Login</button>
 </div>
 

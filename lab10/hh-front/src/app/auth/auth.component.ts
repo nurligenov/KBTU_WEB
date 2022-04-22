@@ -14,11 +14,11 @@ export class AuthComponent implements OnInit {
   }
 
   register(login:string, email:string, password:string,){
-    this.authService.register(login, email, password).subscribe(token => localStorage.setItem('token', token))
+    this.authService.register(login, email, password).subscribe(user => localStorage.setItem('token', user.token))
   }
   login(login:string, email:string, password:string){
     const token = localStorage.getItem('token') || '';
-    this.authService.login(login, email, password, token).subscribe(token => localStorage.setItem('token', token))
+    this.authService.login(login, email, password, token).subscribe(user => localStorage.setItem('token', user.token))
   }
 
 } 
