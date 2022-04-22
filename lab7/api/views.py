@@ -21,6 +21,16 @@ class ProductListView(ListView):
         return JsonResponse(serializer.data, safe=False)
 
 
+def product_detail_view(request, *args, **kwargs):
+    if request.method == 'GET':
+        product_id = kwargs.get('product_id', None)
+        if not product_id:
+            return JsonResponse({}, safe=False)
+        serializer = ProductSerializer(Product.objects.filter(id=product_id).first(), many=False)
+        return JsonResponse(serializer.data, safe=False)
+    return JsonResponse({}, safe=False)
+
+
 class ProductDetailView(DetailView):
     model = Product
 
@@ -31,7 +41,7 @@ class ProductDetailView(DetailView):
         product = self.get_object()
         if not product:
             return JsonResponse({}, safe=False)
-        serializer = CategorySerializer(product, many=False)
+        serializer = ProductSerializer(product, many=False)
         return JsonResponse(serializer.data, safe=False)
 
 
@@ -64,12 +74,18 @@ class CategoryDetailView(DetailView):
 
 class CompanyListView(ListView):
     model = Company
+    slug = None
 
-    def get_queryset(self):
+    def get_queryset(self, *args, **kwargs):
+        if self.slug == 'city':
+            city = kwargs.get('city_name')
+            print(city)
+            return Company.objects.filter(city=city)
+
         return Company.objects.all()
 
     def get(self, request, *args, **kwargs):
-        serializer = CompanySerializer(self.get_queryset(), many=True)
+        serializer = CompanySerializer(self.get_queryset(*args, **kwargs), many=True)
         return JsonResponse(serializer.data, safe=False)
 
 

@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
-    'rest_framework'
+    'jwtt.apps.JwttConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Рассказать Django о созданной нами кастомной модели пользователя. Строка
+# authentication.User сообщает Django, что мы ссылаемся на модель User в модуле
+# authentication. Этот модуль зарегистрирован выше в настройке INSTALLED_APPS.
+AUTH_USER_MODEL = 'jwtt.User'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'jwtt.backends.JWTAuthentication',
+    ),
+}
